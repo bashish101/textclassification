@@ -3,7 +3,7 @@ import pandas as pd
 
 def preprocess_data(data_path,
 		    feature_header = 'Description',
-		    label_header = 'Title'
+		    label_header = 'Label'
 		    mode = 'train',
 		    savefile_prefix = "preprocessed_data",
 		    save_flag = True):
@@ -17,7 +17,7 @@ def preprocess_data(data_path,
 	label = df[label_header]
 	print("Data Load Complete!")
     
-	text = [title + ' ' + description for title, description in zip(list(map(filter_text, title)), list(map(filter_text, description)))]
+	text = [description for description in list(map(filter_text, description))]
 
 	print("Total {} data read!".format(len(label)))
 
