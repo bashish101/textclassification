@@ -30,9 +30,10 @@ def preprocess_data(data_path,
 
 	return df
 
+
 def tokenize(text):
-		return [word for word in re.split(r"([-.\"',:? !\$#@~()*&\^%;\[\]/\\\+<>\n=])", text) \
-			if word != '' and word != ' ' and word != '\n']
+	return [word for word in re.split(r"([-.\"',:? !\$#@~()*&\^%;\[\]/\\\+<>\n=])", text) \
+		if word != '' and word != ' ' and word != '\n']
 
 def filter_text(input_text):
 	english_words = set(words.words('en'))
